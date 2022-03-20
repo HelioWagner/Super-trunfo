@@ -5,8 +5,11 @@
  let vitoria = 0;
  let empate = 0;
  let derrota = 0;
- let divResultado = document.getElementById("resultado");
- let divResultadoImagem = document.getElementById("resultado_imagem");
+ let divResultado = document.getElementById("resultado")
+ let divResultadoImagem = document.getElementById("resultado_imagem")
+ let divCartaMaquina = document.getElementById("carta-maquina")
+
+
   
  function mudaCarta(tipo) {
     nome1 = ""
@@ -74,13 +77,16 @@
   function sortearCarta() {
     divResultado.innerHTML = ""
     divResultadoImagem.innerHTML = ""
+    divCartaMaquina.innerHTML = '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width:     inherit; height: inherit; position: absolute;">'
+    divCartaMaquina.style.backgroundImage = ""
+   
     if (document.getElementById("opcao_1").checked == true){
         mudaCarta(1)   
     }     
     else {
         mudaCarta(2)    
     }  
-    
+
 
     let numeroCartaMaquina = parseInt(Math.random() * 3);
     cartaMaquina = cartas[numeroCartaMaquina];
@@ -159,8 +165,8 @@
   }
   
   function exibirCartaMaquina() {
+     
     
-     var divCartaMaquina = document.getElementById("carta-maquina")
     divCartaMaquina.style.backgroundImage = `url(${cartaMaquina.imagem})`
     let moldura = '<img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/card-super-trunfo-transparent.png" style=" width:     inherit; height: inherit; position: absolute;">';
     let tagHTML = "<div id='opcoes' class='carta-status'>"
